@@ -1,0 +1,5 @@
+{
+  "name": "Secret Generator",
+  "description": "A comprehensive tool for generating secure secrets, including random passwords, memorable passphrases, and PINs with extensive customization options.",
+  "requestFramePermissions": []
+}
