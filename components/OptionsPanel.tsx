@@ -1,11 +1,13 @@
 import React from 'react';
 import { PasswordOptions, GenerationMode } from '../types';
+import { Cog } from './Icon';
 
 interface OptionsPanelProps {
   options: PasswordOptions;
   setOptions: React.Dispatch<React.SetStateAction<PasswordOptions>>;
   mode: GenerationMode;
   setMode: (mode: GenerationMode) => void;
+  onOpenSettings: () => void;
 }
 
 const TabButton: React.FC<{ active: boolean; onClick: () => void; children: React.ReactNode }> = ({ active, onClick, children }) => (
@@ -31,7 +33,7 @@ const Checkbox: React.FC<{ label: string; checked: boolean; onChange: (e: React.
 );
 
 
-const OptionsPanel: React.FC<OptionsPanelProps> = ({ options, setOptions, mode, setMode }) => {
+const OptionsPanel: React.FC<OptionsPanelProps> = ({ options, setOptions, mode, setMode, onOpenSettings }) => {
 
   const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -99,6 +101,17 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({ options, setOptions, mode, 
             placeholder="e.g., abc123"
             className="w-full bg-brand-primary p-2 rounded-md border border-brand-secondary focus:ring-2 focus:ring-brand-accent focus:outline-none"
           />
+        </div>
+        <hr className="border-brand-primary/50" />
+        <div className="text-left">
+            <button 
+            onClick={onOpenSettings} 
+            aria-label="Open advanced settings"
+            className="inline-flex items-center gap-2 text-brand-subtle hover:text-brand-accent transition-colors text-base"
+            >
+            <Cog className="w-6 h-6" />
+            <span>Advanced Settings</span>
+            </button>
         </div>
     </div>
   );

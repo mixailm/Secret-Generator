@@ -51,17 +51,10 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-brand-primary font-sans flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl mx-auto">
-        <header className="text-center mb-8 relative">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-text mb-2">Secret Generator</h1>
-          <button 
-            onClick={() => setIsSettingsOpen(true)} 
-            aria-label="Open settings"
-            className="absolute top-1/2 right-0 -translate-y-1/2 text-brand-subtle hover:text-brand-accent transition-colors"
-          >
-            <Cog className="w-7 h-7" />
-          </button>
+    <div className="min-h-screen bg-brand-primary font-sans flex items-center justify-center p-4 md:p-8">
+      <div className="w-full max-w-3xl">
+        <header className="text-center mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-text mb-2">Password Generator</h1>
         </header>
         
         <main className="bg-brand-secondary rounded-lg shadow-2xl p-6 md:p-8 space-y-6">
@@ -76,7 +69,8 @@ const App: React.FC = () => {
             options={options} 
             setOptions={setOptions} 
             mode={mode} 
-            setMode={handleSetMode} 
+            setMode={handleSetMode}
+            onOpenSettings={() => setIsSettingsOpen(true)}
           />
         </main>
         
