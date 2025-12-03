@@ -73,10 +73,6 @@ const App: React.FC = () => {
             onOpenSettings={() => setIsSettingsOpen(true)}
           />
         </main>
-        
-        <footer className="text-center mt-8 text-brand-subtle text-sm">
-          <p>&copy; {new Date().getFullYear()} SecureGen. All rights reserved.</p>
-        </footer>
       </div>
       <SettingsModal 
         isOpen={isSettingsOpen}

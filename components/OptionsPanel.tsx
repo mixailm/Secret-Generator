@@ -28,7 +28,7 @@ const Checkbox: React.FC<{ label: string; checked: boolean; onChange: (e: React.
             <div className={`w-10 h-5 rounded-full shadow-inner transition-colors ${checked ? 'bg-brand-accent' : 'bg-brand-primary'}`}></div>
             <div className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${checked ? 'transform translate-x-5' : ''}`}></div>
         </div>
-        <span className="text-brand-text">{label}</span>
+        <span className={`transition-colors ${checked ? 'text-brand-text' : 'text-brand-subtle'}`}>{label}</span>
     </label>
 );
 
